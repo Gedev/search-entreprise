@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Ajout d'une entreprise</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title is-1">Search entreprise</h1>
+
+        <h3 class="subtitle is-3">Ajout d'une entreprise</h3>
+
+        <form th:action="@{/entreprises/save}" method="post">
+
+            <div class="field">
+                <label class="label" for="entrepriseName">Nom de l'entreprise</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text" id="entrepriseName" name="name" placeholder="Amazon, Deloitte, ...">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="entreprise_nb_employees">Nombre d'employés</label>
+                <input type="number" class="input" id="entreprise_nb_employees" name="number_of_employees" placeholder="Exemple : 5000">
+            </div>
+
+            <div class="field">
+                <label for="entrepriseType" class="label">Type d'entreprise</label>
+                <input type="text" class="input" id="entrepriseType" name="type_of_entreprise" placeholder="Recrutement, éditeur de logiciel, ...">
+            </div>
+            <a th:href="@{/entreprises}"><button type="button" class="button is-warning"><- Retour</button></a>
+            <button type="submit" class="button is-info">Ajouter</button>
+        </form>
+    </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+</body>
+</html>

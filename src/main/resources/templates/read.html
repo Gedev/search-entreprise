@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Liste des entreprises</title>
+</head>
+
+<body>
+<div class="container">
+
+    <p class="title is-1">Search entreprise</p>
+    <p class="subtitle is-3">Liste des entreprises :</p>
+
+    <a th:href="@{/}" class="button is-info"> <- Retour à l'accueil</a>
+    <a th:href="@{/entreprises/create}" class="button is-info"> + Ajouter une nouvelle entreprise</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Nombre d'employés</th>
+            <th scope="col">Type d'entreprise</th>
+        </tr>
+        </thead>
+        <tbody>
+        <div class="card is-horizontal columns">
+            <tr th:each="entreprise:${entreprises}">
+                <td th:text="${entreprise.id}"></td>
+                <!--CELLULE IMAGE-->
+                <td>
+                    <div class="card-image column">
+                        <figure class="image is-96x96">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Great_Wave_off_Kanagawa2.jpg" alt="this used to be photo">
+                        </figure>
+                    </div>
+                </td>
+                <td th:text="${entreprise.name}"></td>
+                <td th:text="${entreprise.number_of_employees}"></td>
+                <td th:text="${entreprise.type_of_entreprise}"></td>
+                <td><a href="" class="button is-primary">Editer</a></td>
+                <td><a href="" class="button is-danger">Supprimer</a></td>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
