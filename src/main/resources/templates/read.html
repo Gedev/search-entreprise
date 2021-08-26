@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
@@ -8,44 +8,63 @@
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
 
-    <p class="title is-1">Search entreprise</p>
-    <p class="subtitle is-3">Liste des entreprises :</p>
+        <p class="title is-1 title-homepage">Search entreprise</p>
+        <p class="subtitle is-3">Liste des entreprises :</p>
 
-    <a th:href="@{/}" class="button is-info"> <- Retour à l'accueil</a>
-    <a th:href="@{/entreprises/create}" class="button is-info"> + Ajouter une nouvelle entreprise</a>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Nombre d'employés</th>
-            <th scope="col">Type d'entreprise</th>
-        </tr>
-        </thead>
-        <tbody>
-        <div class="card is-horizontal columns">
-            <tr th:each="entreprise:${entreprises}">
-                <td th:text="${entreprise.id}"></td>
-                <!--CELLULE IMAGE-->
-                <td>
-                    <div class="card-image column">
-                        <figure class="image is-96x96">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Great_Wave_off_Kanagawa2.jpg" alt="this used to be photo">
-                        </figure>
-                    </div>
-                </td>
-                <td th:text="${entreprise.name}"></td>
-                <td th:text="${entreprise.number_of_employees}"></td>
-                <td th:text="${entreprise.type_of_entreprise}"></td>
-                <td><a href="" class="button is-primary">Editer</a></td>
-                <td><a href="" class="button is-danger">Supprimer</a></td>
-            </tr>
+        <a th:href="@{/}" class="button is-warning">
+            <i class="fas fa-arrow-left"></i>
+            Retour à l'accueil
+        </a>
+        <a th:href="@{/entreprises/create}" class="button is-info"> + Ajouter une nouvelle entreprise</a>
+
+        <div class="columns is-multiline is-centered">
+            <div class="column">
+
+            <!-- TABLEAU -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Nombre d'employés</th>
+                    <th scope="col">Type d'entreprise</th>
+                    <th scope="col">Localisation</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <div class="card is-horizontal columns">
+                    <tr th:each="entreprise:${entreprises}">
+                        <td th:text="${entreprise.id}" class="is-vcentered"></td>
+                        <!--CELLULE IMAGE-->
+                        <td>
+                            <div class="card-image column">
+                                <figure class="image is-96x96">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png">
+                                </figure>
+                            </div>
+                        </td>
+                        <td th:text="${entreprise.name}" class="is-vcentered"></td>
+                        <td th:text="${entreprise.number_of_employees}" class="is-vcentered"></td>
+                        <td th:text="${entreprise.type_of_entreprise}" class="is-vcentered"></td>
+                        <td th:text="${entreprise.localisation}" class="is-vcentered"></td>
+                        <td class="is-vcentered"><a href="" class="button is-primary">Editer</a></td>
+                        <td class="is-vcentered"><a href="" class="button is-danger">Supprimer</a></td>
+
+                    </tr>
+                </div>
+                </tbody>
+            </table>
+
+            </div>
         </div>
-        </tbody>
-    </table>
-</div>
+    </div>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
 </body>
 </html>

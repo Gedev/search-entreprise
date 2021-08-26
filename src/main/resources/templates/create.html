@@ -26,15 +26,38 @@
 
             <div class="field">
                 <label class="label" for="entreprise_nb_employees">Nombre d'employés</label>
-                <input type="number" class="input" id="entreprise_nb_employees" name="number_of_employees" placeholder="Exemple : 5000">
+                <div class="control has-icons-left">
+                    <input type="number" class="input" id="entreprise_nb_employees" name="number_of_employees" placeholder="Exemple : 5000">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user-friends"></i>
+                    </span>
+                </div>
             </div>
 
             <div class="field">
-                <label for="entrepriseType" class="label">Type d'entreprise</label>
-                <input type="text" class="input" id="entrepriseType" name="type_of_entreprise" placeholder="Recrutement, éditeur de logiciel, ...">
+                <label class="label" for="localisation_entreprise">Localisation de l'entreprise</label>
+                <div class="control has-icons-left">
+                    <input type="text" class="input" id="localisation_entreprise" name="localisation" placeholder="Luxembourg Ville">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                </div>
             </div>
+
+            <div class="field">
+                <label class="label" for="entrepriseType">Type d'entreprise</label>
+                <div class="control has-icons-left">
+                    <input type="text" class="input" id="entrepriseType" name="type_of_entreprise" placeholder="Recrutement, éditeur de logiciel, ...">
+                    <span class="icon is-small is-left">
+                            <i class="fas fa-industry"></i>
+                    </span>
+                </div>
+            </div>
+
+
             <a th:href="@{/entreprises}"><button type="button" class="button is-warning"><- Retour</button></a>
             <button type="submit" class="button is-info">Ajouter</button>
+
         </form>
     </div>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>

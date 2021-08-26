@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title>Listing de l'historique</title>
+</head>
+<body>
+    <div class="container">
+
+        <p class="title is-1 title-homepage">Search entreprise</p>
+        <p class="subtitle is-3">Mon historique</p>
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">#</th>
+                <th scope="col">Entreprise ID</th>
+                <th scope="col">Type d'entreprise</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+                <div class="card is-horizontal columns">
+                    <tr th:each="historic:${historics}">
+                        <td th:text="${historic.id}" class="is-vcentered"></td>
+                        <!--CELLULE IMAGE-->
+                        <td>
+                            <div class="card-image column">
+                                <figure class="image is-96x96">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png">
+                                </figure>
+                            </div>
+                        </td>
+                        <td th:text="${historic.entreprise_ID}" class="is-vcentered"></td>
+                        <td th:text="${historic.consulted_date}" class="is-vcentered"></td>
+                        <td th:text="${historic.user_ID}" class="is-vcentered">Aucune donnée</td>
+                        <td th:text="${historic.job_platform}" class="is-vcentered"></td>
+                        <td class="is-vcentered"><a href="" class="button is-primary">Editer</a></td>
+                        <td class="is-vcentered"><a href="" class="button is-danger">Supprimer</a></td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

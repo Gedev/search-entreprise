@@ -12,17 +12,19 @@ public class Entreprise {
     private String name;
     private int number_of_employees;
     private String type_of_entreprise;
+    private String localisation;
 
     public Entreprise() {
         super();
     }
 
-    public Entreprise(Long id, String name, int number_of_employees, String type_of_entreprise) {
+    public Entreprise(Long id, String name, int number_of_employees, String type_of_entreprise, String localisation) {
         super();
         this.id = id;
         this.name = name;
         this.number_of_employees = number_of_employees;
         this.type_of_entreprise = type_of_entreprise;
+        this.localisation = localisation;
     }
 
     public Long getId() {
@@ -57,6 +59,14 @@ public class Entreprise {
         this.type_of_entreprise = type_of_entreprise;
     }
 
+    public String getLocalisation() {
+        return localisation;
+    }
+
+    public void setLocalisation(String localisation) {
+        this.localisation = localisation;
+    }
+
     @Override
     public String toString() {
         return "Entreprise{" +
@@ -64,6 +74,7 @@ public class Entreprise {
                 ", name='" + name + '\'' +
                 ", number_of_employees=" + number_of_employees +
                 ", type_of_entreprise='" + type_of_entreprise + '\'' +
+                ", localisation='" + localisation + '\'' +
                 '}';
     }
 }
